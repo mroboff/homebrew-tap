@@ -3,9 +3,9 @@ class VmCurator < Formula
   homepage "https://github.com/mroboff/vm-curator"
   # Prebuilt release binary (built on ubuntu-22.04; needs only glibc >= 2.34
   # and libudev.so.1, present on any systemd-based distro).
-  url "https://github.com/mroboff/vm-curator/releases/download/v1.3.0/vm-curator-v1.3.0-linux-x86_64.tar.gz"
-  sha256 "c793d836b984d9f8b72e8a4731c4bc21311c2b6c5200aadb688e8856d3b080b3"
-  version "1.3.0"
+  url "https://github.com/mroboff/vm-curator/releases/download/v1.4.0/vm-curator-v1.4.0-linux-x86_64.tar.gz"
+  sha256 "783e94d992029c56eb340f4fd43536441e441bb5bd6076b325eef75e44a339b7"
+  version "1.4.0"
   license "MIT"
 
   # macOS support is planned upstream. When macOS release assets exist,
