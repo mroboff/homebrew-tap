@@ -1,23 +1,18 @@
 class VmCurator < Formula
   desc "TUI for creating and managing QEMU/KVM virtual machines"
   homepage "https://github.com/mroboff/vm-curator"
+  # Prebuilt release binary (built on ubuntu-22.04; needs only glibc >= 2.34
+  # and libudev.so.1, present on any systemd-based distro).
+  url "https://github.com/mroboff/vm-curator/releases/download/v1.3.0/vm-curator-v1.3.0-linux-x86_64.tar.gz"
+  sha256 "c793d836b984d9f8b72e8a4731c4bc21311c2b6c5200aadb688e8856d3b080b3"
   version "1.3.0"
   license "MIT"
 
-  # Installs the prebuilt release binary (built on ubuntu-22.04; needs only
-  # glibc >= 2.34 and libudev.so.1, present on any systemd-based distro).
-  #
-  # macOS support is planned upstream; when release assets exist, add an
-  # on_macos block here and drop the two depends_on lines below.
+  # macOS support is planned upstream. When macOS release assets exist,
+  # restructure to on_macos/on_linux blocks (each with url + sha256) and drop
+  # these gates.
   depends_on :linux
   depends_on arch: :x86_64
-
-  on_linux do
-    on_intel do
-      url "https://github.com/mroboff/vm-curator/releases/download/v1.3.0/vm-curator-v1.3.0-linux-x86_64.tar.gz"
-      sha256 "c793d836b984d9f8b72e8a4731c4bc21311c2b6c5200aadb688e8856d3b080b3"
-    end
-  end
 
   def install
     bin.install "vm-curator"
